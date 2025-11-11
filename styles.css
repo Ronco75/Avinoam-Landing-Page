@@ -722,7 +722,7 @@ a:focus-visible {
 }
 
 .fit__list li::before {
-  content: '←';
+  content: '•';
   position: absolute;
   right: var(--spacing-lg);
   font-size: 1.5rem;
