@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow unnecessary files
+Disallow: /nagishli.js
+Disallow: /nl-files/
+Disallow: /nagishli_v2.3_rev050920191652/
+
+# Sitemap
+Sitemap: https://avinoamhattal.co.il/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
