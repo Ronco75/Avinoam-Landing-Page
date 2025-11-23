@@ -18,13 +18,6 @@
     <link rel="preload" as="style" href="styles.css">
     <link rel="preload" as="script" href="main.js">
 
-     <!--   TODO: Ask Avinoam for the following:
-            TODO: Change/Enhance images
-            TODO: Change/Enhance copywriting
-            TODO: Change/Enhance whatsapp text message
-            TODO: Change testimonials
-      -->
-
     <!-- SEO Meta Tags -->
     <title>אבינעם הטל - אימון מנטלי ליציאה מתקיעות ומימוש פוטנציאל</title>
     <meta name="description" content="אימון מנטלי אישי ליציאה מתקיעות, ובהירות, חופש ושקט פנימי..">
@@ -56,10 +49,10 @@
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-    <!-- Google Fonts: Heebo -->
+    <!-- Google Fonts: Premium Hebrew Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Secular+One&family=Varela+Round&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -235,61 +228,85 @@
     <!-- Main Content -->
     <main id="main" role="main">
 
-        <!-- Hero Section -->
+        <!-- Hero Section: STATEMENT PIECE -->
         <section id="hero" class="hero">
+            <div class="hero__bg-ornament"></div>
             <div class="container hero__container">
                 <div class="hero__content">
-                    <h1 class="hero__title">אבינעם הטל - אימון מנטלי ליציאה מתקיעות ומימוש הפוטנציאל</h1>
-                    <h2 class="hero__subtitle">מזכיר לאנשים לבחור בחיים, ולא לתת לחיים לבחור בשבילם</h2>
-                    <p class="hero__intro">אני אבינעם - אדם שאוהב אנשים, אוהב להקשיב, מאמין בטוב ורואה את האור שבכל אחד. פעם גם אני הרגשתי תקוע, מבולבל, מלא עוצמות שלא ידעתי איך להביא לעולם. עד שהבנתי שהשינוי קורה רק כשמתחילים <em>לזוז.</em> והיום זו השליחות שלי - להזכיר גם לך את הכוח שלך, ולעזור לך לנוע קדימה מתוך בהירות, חופש ושקט פנימי.</p>
+                    <div class="hero__eyebrow animate-in">אימון מנטלי</div>
+                    <h1 class="hero__title animate-in">
+                        <span class="hero__title-main">אבינעם הטל</span>
+                        <span class="hero__title-sub">יציאה מתקיעות<br>ומימוש הפוטנציאל</span>
+                    </h1>
+                    <h2 class="hero__subtitle animate-in">מזכיר לאנשים לבחור בחיים,<br>ולא לתת לחיים לבחור בשבילם</h2>
+                    <p class="hero__intro animate-in">אני אבינעם - אדם שאוהב אנשים, אוהב להקשיב, מאמין בטוב ורואה את האור שבכל אחד. פעם גם אני הרגשתי תקוע, מבולבל, מלא עוצמות שלא ידעתי איך להביא לעולם. עד שהבנתי שהשינוי קורה רק כשמתחילים <em>לזוז.</em></p>
 
-                    <!-- Trust Row -->
-                    <div class="hero__trust">
-                        <span class="trust-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <circle cx="12" cy="9" r="7"></circle>
-                                <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"></path>
+                    <!-- Trust Pills -->
+                    <div class="hero__trust animate-in">
+                        <span class="trust-pill">
+                            <svg class="trust-icon-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="trust-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M16,4 L20,8 L20,14 L12,14 L12,8 Z" fill="url(#trust-grad1)" opacity="0.7"/>
+                                <rect x="10" y="14" width="12" height="12" rx="2" fill="url(#trust-grad1)" opacity="0.5"/>
+                                <circle cx="16" cy="20" r="2.5" fill="#7A5C44"/>
                             </svg>
                             מאמן מוסמך NLP ו-ELT
                         </span>
-                        <span class="trust-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        <span class="trust-pill">
+                            <svg class="trust-icon-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="trust-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#A17C5B;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#7A5C44;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <polygon points="16,6 20,14 16,22 12,14" fill="url(#trust-grad2)" opacity="0.6"/>
+                                <circle cx="16" cy="14" r="4" fill="none" stroke="#7A5C44" stroke-width="2"/>
+                                <path d="M16,6 L16,22" stroke="#A17C5B" stroke-width="1.5" opacity="0.7"/>
                             </svg>
                             שילוב מדע ורוחניות
                         </span>
-                        <span class="trust-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <span class="trust-pill">
+                            <svg class="trust-icon-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="trust-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="8" y="10" width="16" height="12" rx="3" fill="url(#trust-grad3)" opacity="0.6"/>
+                                <path d="M12,16 Q14,14 16,16 T20,16" stroke="#7A5C44" stroke-width="2" fill="none" opacity="0.8"/>
+                                <circle cx="12" cy="14" r="1.5" fill="#7A5C44"/>
+                                <circle cx="20" cy="14" r="1.5" fill="#7A5C44"/>
                             </svg>
                             ליווי בוואטסאפ
                         </span>
                     </div>
 
-                    <!-- CTA Buttons -->
-                    <div class="hero__cta">
-                        <a href="https://wa.me/+972556669912?text=שלום, אני מעוניין/ת בפגישת היכרות" class="btn btn--primary btn--lg" target="_blank" rel="noopener" data-track="hero_cta_whatsapp">
+                    <!-- CTA Buttons with Glow -->
+                    <div class="hero__cta animate-in">
+                        <a href="https://wa.me/+972556669912?text=שלום, אני מעוניין/ת בפגישת היכרות" class="btn btn--primary btn--glow" target="_blank" rel="noopener" data-track="hero_cta_whatsapp">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                             </svg>
                             דברו איתי בוואטסאפ
                         </a>
-                        <a href="#contact" class="btn btn--secondary btn--lg" data-track="hero_cta_form">קבעו פגישת היכרות</a>
+                        <a href="#contact" class="btn btn--secondary" data-track="hero_cta_form">קבעו פגישת היכרות</a>
                     </div>
                 </div>
 
-                <div class="hero__image">
-                    <!-- Optimized WebP image with fallback -->
+                <!-- Organic Portrait Shape -->
+                <div class="hero__portrait-container animate-in">
+                    <div class="hero__portrait-blob"></div>
                     <picture class="hero__portrait-wrapper">
-                        <source type="image/webp"
-                                srcset="/images/avinoam-portrait.webp"
-                                media="(min-width: 768px)">
-                        <source type="image/webp"
-                                srcset="/images/avinoam-portrait.webp"
-                                media="(max-width: 767px)">
-                        <source type="image/jpeg"
-                                srcset="/images/avinoam-portrait.jpg">
-                        <img src="avinoam-portrait.png"
+                        <source type="image/webp" srcset="/images/avinoam-portrait.webp">
+                        <source type="image/jpeg" srcset="/images/avinoam-portrait.jpg">
+                        <img src="/images/avinoam-portrait.png"
                              alt="אבינעם הטל - מאמן מנטלי מוסמך ומומחה ב-NLP"
                              width="560"
                              height="700"
@@ -301,93 +318,249 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
+        <!-- Certifications Section: GRID -->
         <section id="certs" class="section certs">
             <div class="container">
-                <h2 class="section__title">ההכשרות שלי</h2>
+                <h2 class="section__title animate-in">ההכשרות שלי</h2>
 
                 <div class="certs__grid">
-                    <div class="cert-card reveal">
+                    <div class="cert-card glass-card animate-in">
+                        <div class="cert-card__visual">
+                            <svg class="cert-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:0.3" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:0.5" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="50" r="35" fill="url(#grad1)" />
+                                <path d="M30,50 Q40,30 50,50 T70,50" stroke="#7A5C44" stroke-width="3" fill="none" opacity="0.6"/>
+                            </svg>
+                        </div>
                         <h3 class="cert-card__title">NLP Practitioner</h3>
+                        <div class="cert-card__accent"></div>
                     </div>
-                    <div class="cert-card reveal">
+
+                    <div class="cert-card glass-card animate-in">
+                        <div class="cert-card__visual">
+                            <svg class="cert-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#A17C5B;stop-opacity:0.4" />
+                                        <stop offset="100%" style="stop-color:#7A5C44;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                                <polygon points="50,20 80,65 20,65" fill="url(#grad2)" />
+                                <circle cx="50" cy="50" r="15" fill="none" stroke="#7A5C44" stroke-width="2" opacity="0.5"/>
+                            </svg>
+                        </div>
                         <h3 class="cert-card__title">NLP Master</h3>
+                        <div class="cert-card__accent"></div>
                     </div>
-                    <div class="cert-card reveal">
-                        <h3 class="cert-card__title">ELT - טיפול וליווי טראומות רגשיות</h3>
+
+                    <div class="cert-card glass-card animate-in">
+                        <div class="cert-card__visual">
+                            <svg class="cert-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:0.35" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:0.55" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M50,20 C30,20 30,80 50,80 C70,80 70,20 50,20" fill="url(#grad3)" />
+                                <ellipse cx="50" cy="50" rx="20" ry="30" fill="none" stroke="#7A5C44" stroke-width="2" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <h3 class="cert-card__title">ELT<span class="cert-card__subtitle">טיפול וליווי טראומות רגשיות</span></h3>
+                        <div class="cert-card__accent"></div>
                     </div>
-                    <div class="cert-card reveal">
-                        <h3 class="cert-card__title">FTC - אימון מנטלי עם כלים מעולם תורת הנפש והספר 'התניא'</h3>
+
+                    <div class="cert-card glass-card animate-in">
+                        <div class="cert-card__visual">
+                            <svg class="cert-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#A17C5B;stop-opacity:0.45" />
+                                        <stop offset="100%" style="stop-color:#7A5C44;stop-opacity:0.55" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="30" y="30" width="40" height="40" rx="8" fill="url(#grad4)" transform="rotate(45 50 50)"/>
+                                <circle cx="50" cy="50" r="12" fill="none" stroke="#7A5C44" stroke-width="2.5" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="cert-card__title">FTC<span class="cert-card__subtitle">אימון מנטלי עם כלים מעולם התניא</span></h3>
+                        <div class="cert-card__accent"></div>
                     </div>
                 </div>
 
-                <p class="certs__helper">השילוב הזה בין כלים מדעיים, פסיכולוגיים ורוחניים מאפשר לי להתאים את הדרך לכל אדם באופן אישי - בדיוק לפי מי שהוא.</p>
+                <p class="certs__helper animate-in">השילוב הזה בין כלים מדעיים, פסיכולוגיים ורוחניים מאפשר לי להתאים את הדרך לכל אדם באופן אישי - בדיוק לפי מי שהוא.</p>
             </div>
         </section>
 
-        <!-- Offer Section -->
+        <!-- Offer Section: BENTO GRID -->
         <section id="offer" class="section offer">
             <div class="container">
-                <div class="offer__content">
-                    <h2 class="section__title">מה אני מציע לך</h2>
+                <h2 class="section__title animate-in">מה אני מציע לך</h2>
 
-                    <ul class="offer__list">
-                        <li>מה עוצר אותך</li>
-                        <li>מה הסיפורים שאתה מספר לעצמך</li>
-                        <li>איך יוצאים מתקיעות לתנועה אמיתית</li>
-                    </ul>
-
-                    <div class="offer__bonuses">
-                        <h3 class="offer__bonuses-title">כולל:</h3>
-                        <div class="bonus-item">
-                            <span class="bonus-icon">💬</span>
-                            <span>ליווי אישי בוואטסאפ</span>
-                        </div>
-                        <div class="bonus-item">
-                            <span class="bonus-icon">📞</span>
-                            <span>שיחת טלפון בעת צורך</span>
-                        </div>
+                <div class="offer__bento">
+                    <div class="offer__main glass-card animate-in">
+                        <h3 class="offer__heading">במפגש נתמקד ב:</h3>
+                        <ul class="offer__list">
+                            <li>מה עוצר אותך</li>
+                            <li>מה הסיפורים שאתה מספר לעצמך</li>
+                            <li>איך יוצאים מתקיעות לתנועה אמיתית</li>
+                        </ul>
                     </div>
 
-
-                    <div class="offer__cta">
-                        <a href="https://wa.me/+972556669912" class="btn btn--primary btn--lg" target="_blank" rel="noopener" data-track="offer_cta_whatsapp">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    <div class="offer__bonus glass-card animate-in" data-bonus="chat">
+                        <div class="offer__bonus-visual">
+                            <svg class="offer-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="offer-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#25D366;stop-opacity:0.4" />
+                                        <stop offset="100%" style="stop-color:#128C7E;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M25,45 Q25,25 45,25 L70,25 Q80,25 80,35 L80,55 Q80,65 70,65 L50,65 L35,75 L35,65 Q25,65 25,55 Z"
+                                      fill="url(#offer-grad1)" opacity="0.8"/>
+                                <circle cx="45" cy="45" r="4" fill="#25D366" opacity="0.7"/>
+                                <circle cx="55" cy="45" r="4" fill="#25D366" opacity="0.7"/>
+                                <circle cx="65" cy="45" r="4" fill="#25D366" opacity="0.7"/>
+                                <path d="M30,50 Q40,35 50,50" stroke="#128C7E" stroke-width="2" fill="none" opacity="0.5"/>
                             </svg>
-                            דברו איתי בוואטסאפ
-                        </a>
-                        <a href="#contact" class="btn btn--secondary btn--lg" data-track="offer_cta_form">קבעו פגישת היכרות</a>
+                        </div>
+                        <h4>ליווי אישי<br>בוואטסאפ</h4>
+                        <div class="offer__bonus-accent"></div>
                     </div>
+
+                    <div class="offer__bonus glass-card animate-in" data-bonus="phone">
+                        <div class="offer__bonus-visual">
+                            <svg class="offer-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="offer-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:0.35" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:0.55" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M35,25 L45,25 Q50,25 50,30 L50,70 Q50,75 45,75 L35,75 Q30,75 30,70 L30,30 Q30,25 35,25"
+                                      fill="url(#offer-grad2)" opacity="0.9"/>
+                                <rect x="35" y="32" width="10" height="28" rx="2" fill="none" stroke="#7A5C44" stroke-width="1.5" opacity="0.5"/>
+                                <circle cx="40" cy="67" r="3" fill="#A17C5B" opacity="0.6"/>
+                                <path d="M55,40 Q65,35 70,45 Q75,55 65,60" stroke="#7A5C44" stroke-width="2.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+                                <path d="M60,42 Q68,38 72,46 Q76,54 68,58" stroke="#A17C5B" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4>שיחת טלפון<br>בעת צורך</h4>
+                        <div class="offer__bonus-accent"></div>
+                    </div>
+                </div>
+
+                <div class="offer__cta animate-in">
+                    <a href="https://wa.me/+972556669912" class="btn btn--primary btn--glow" target="_blank" rel="noopener" data-track="offer_cta_whatsapp">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        דברו איתי בוואטסאפ
+                    </a>
+                    <a href="#contact" class="btn btn--secondary" data-track="offer_cta_form">קבעו פגישת היכרות</a>
                 </div>
             </div>
         </section>
 
-        <!-- Fit Section -->
+        <!-- Fit Section: BENTO GRID -->
         <section id="fit" class="section fit">
             <div class="container">
-                <h2 class="section__title">למי זה מתאים</h2>
+                <h2 class="section__title animate-in">למי זה מתאים</h2>
 
-                <ul class="fit__list">
-                    <li class="reveal">מרגיש/ה תקוע/ה או מבולבל/ת</li>
-                    <li class="reveal">לא מממש/ת את עצמך</li>
-                    <li class="reveal">תחושת פספוס או חוסר משמעות</li>
-                    <li class="reveal">רצון לחזור לתנועה, שמחה ובהירות</li>
-                </ul>
+                <div class="fit__grid">
+                    <div class="fit-card glass-card animate-in" data-theme="locked">
+                        <div class="fit-card__bg-shape"></div>
+                        <div class="fit-card__visual">
+                            <svg class="fit-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="fit-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:0.2" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:0.4" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="25" y="30" width="30" height="35" rx="4" fill="url(#fit-grad1)" />
+                                <circle cx="40" cy="20" r="12" fill="none" stroke="#7A5C44" stroke-width="3" opacity="0.6"/>
+                                <line x1="35" y1="45" x2="45" y2="45" stroke="#7A5C44" stroke-width="2" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <p>מרגיש/ה תקוע/ה או מבולבל/ת</p>
+                    </div>
+
+                    <div class="fit-card glass-card animate-in" data-theme="potential">
+                        <div class="fit-card__bg-shape"></div>
+                        <div class="fit-card__visual">
+                            <svg class="fit-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="fit-grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#A17C5B;stop-opacity:0.25" />
+                                        <stop offset="100%" style="stop-color:#7A5C44;stop-opacity:0.45" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M20,60 L40,20 L60,60" fill="none" stroke="url(#fit-grad2)" stroke-width="4"/>
+                                <circle cx="40" cy="20" r="8" fill="#7A5C44" opacity="0.4"/>
+                                <circle cx="40" cy="40" r="5" fill="#A17C5B" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <p>לא מממש/ת את עצמך</p>
+                    </div>
+
+                    <div class="fit-card glass-card animate-in" data-theme="fog">
+                        <div class="fit-card__bg-shape"></div>
+                        <div class="fit-card__visual">
+                            <svg class="fit-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="fit-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#7A5C44;stop-opacity:0.15" />
+                                        <stop offset="100%" style="stop-color:#A17C5B;stop-opacity:0.35" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="40" cy="40" r="25" fill="url(#fit-grad3)" opacity="0.7"/>
+                                <circle cx="40" cy="40" r="18" fill="none" stroke="#7A5C44" stroke-width="2" opacity="0.4" stroke-dasharray="4,4"/>
+                                <circle cx="40" cy="40" r="10" fill="#A17C5B" opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <p>תחושת פספוס או חוסר משמעות</p>
+                    </div>
+
+                    <div class="fit-card glass-card animate-in" data-theme="flow">
+                        <div class="fit-card__bg-shape"></div>
+                        <div class="fit-card__visual">
+                            <svg class="fit-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="fit-grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#A17C5B;stop-opacity:0.3" />
+                                        <stop offset="100%" style="stop-color:#7A5C44;stop-opacity:0.5" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M15,40 Q30,20 40,40 T65,40" fill="none" stroke="url(#fit-grad4)" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M15,50 Q30,65 40,50 T65,50" fill="none" stroke="#7A5C44" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+                                <circle cx="65" cy="40" r="4" fill="#A17C5B" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <p>רצון לחזור לתנועה, שמחה ובהירות</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Results Section -->
         <section id="results" class="section results">
             <div class="container">
-                <h2 class="section__title">מה תקבלו</h2>
+                <h2 class="section__title animate-in">מה תקבלו</h2>
 
-                <p class="results__text">יותר שחרור. יותר תנועה. יותר שלווה. תחושת חופש, שמחה ובהירות. ובעיקר - תיזכר מי אתה באמת.</p>
+                <div class="results__content animate-in">
+                    <p class="results__text">יותר שחרור. יותר תנועה. יותר שלווה.<br>תחושת חופש, שמחה ובהירות.<br>ובעיקר - <strong>תיזכר מי אתה באמת.</strong></p>
 
-                <blockquote class="results__quote reveal">
-                    <p>"שכחתי מי אני - והזכרת לי פשוט."</p>
-                    <cite>- מתאמן אמיתי שלי</cite>
-                </blockquote>
+                    <blockquote class="results__quote glass-card">
+                        <p>"שכחתי מי אני - והזכרת לי פשוט."</p>
+                        <cite>- מתאמן אמיתי</cite>
+                    </blockquote>
+                </div>
             </div>
         </section>
 
@@ -395,81 +568,54 @@
         <section id="about" class="section about">
             <div class="container about__container">
                 <div class="about__content">
-                    <h2 class="section__title">מי אני ומה אני מאמין</h2>
+                    <h2 class="section__title animate-in">מי אני ומה אני מאמין</h2>
 
-                    <p class="about__mission">כי אני מאמין שלכל אחד יש תפקיד גדול יותר בעולם הזה. שאנחנו כאן כדי <em>ליצור, לזוז, להשפיע</em> - ולא להישאר תקועים בסיפורים ישנים. אני כאן כדי להזכיר לך שזה אפשרי - לא כסיסמה, אלא כדרך חיים.</p>
+                    <p class="about__mission animate-in">כי אני מאמין שלכל אחד יש תפקיד גדול יותר בעולם הזה. שאנחנו כאן כדי <em>ליצור, לזוז, להשפיע</em> - ולא להישאר תקועים בסיפורים ישנים. אני כאן כדי להזכיר לך שזה אפשרי - לא כסיסמה, אלא כדרך חיים.</p>
 
-                    <blockquote class="about__quote">
-                        <p>"אני מזכיר לאנשים לבחור בחיים, ולא לתת לחיים לבחור בשבילם."</p>
+                    <blockquote class="about__quote glass-card animate-in">
+                        <p>"אני מזכיר לאנשים לבחור בחיים,<br>ולא לתת לחיים לבחור בשבילם."</p>
                     </blockquote>
                 </div>
 
-                <div class="about__image">
-                    <!-- Optimized WebP image with fallback -->
+                <div class="about__image animate-in">
+                    <div class="about__image-blob"></div>
                     <picture>
-                        <source type="image/webp"
-                                srcset="/images/avinoam-about.webp">
-                        <source type="image/jpeg"
-                                srcset="/images/avinoam-about.jpg">
-                        <img src="avinoam-about.jpg"
+                        <source type="image/webp" srcset="/images/avinoam-about.webp">
+                        <source type="image/jpeg" srcset="/images/avinoam-about.jpg">
+                        <img src="/images/avinoam-about.jpg"
                              alt="אבינעם הטל - מאמן מנטלי"
                              width="500"
                              height="600"
                              loading="lazy"
-                             class="about__portrait reveal">
+                             class="about__portrait">
                     </picture>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section: WALL OF LOVE -->
         <section id="testimonials" class="section testimonials">
             <div class="container">
-                <h2 class="section__title">מה מספרים על התהליך</h2>
+                <h2 class="section__title animate-in">מה מספרים על התהליך</h2>
 
-                <div class="testimonials__slider" role="region" aria-label="עדויות" aria-live="polite">
-                    <div class="slider__wrapper">
-                        <div class="slider__track" id="slider-track">
-                            <!-- Testimonial 1 -->
-                            <div class="testimonial-card" data-index="0">
-                                <p class="testimonial__text">"אחרי שנים של להרגיש שאני מסתובב במעגלים, אבינעם עזר לי להבין מה באמת עוצר אותי. היום אני מרגיש הרבה יותר חופשי ובטוח בעצמי."</p>
-                                <cite class="testimonial__author">דוד ל., תל אביב</cite>
-                            </div>
-
-                            <!-- Testimonial 2 -->
-                            <div class="testimonial-card" data-index="1">
-                                <p class="testimonial__text">"השיחה עם אבינעם הייתה שונה מכל דבר שניסיתי. הוא לא רק הקשיב, הוא ממש הזכיר לי מי אני ומה חשוב לי. תודה!"</p>
-                                <cite class="testimonial__author">מיכל כ., ירושלים</cite>
-                            </div>
-
-                            <!-- Testimonial 3 -->
-                            <div class="testimonial-card" data-index="2">
-                                <p class="testimonial__text">"אבינעם הצליח לתת לי כלים פשוטים שממש עובדים. אני מרגישה הרבה יותר שקטה ובשליטה על החיים שלי."</p>
-                                <cite class="testimonial__author">רונית ש., חיפה</cite>
-                            </div>
-                        </div>
+                <div class="testimonials__grid">
+                    <div class="testimonial-card glass-card animate-in">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"אחרי שנים של להרגיש שאני מסתובב במעגלים, אבינעם עזר לי להבין מה באמת עוצר אותי. היום אני מרגיש הרבה יותר חופשי ובטוח בעצמי."</p>
+                        <cite class="testimonial__author">דוד ל., תל אביב</cite>
                     </div>
 
-                    <div class="slider__controls">
-                        <button type="button"
-                                class="slider__btn slider__btn--prev"
-                                aria-label="עדות קודמת"
-                                aria-controls="slider-track">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                        <div class="slider__dots" role="tablist" aria-label="בחירת עדות"></div>
-                        <button type="button"
-                                class="slider__btn slider__btn--next"
-                                aria-label="עדות הבאה"
-                                aria-controls="slider-track">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
+                    <div class="testimonial-card glass-card animate-in">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"השיחה עם אבינעם הייתה שונה מכל דבר שניסיתי. הוא לא רק הקשיב, הוא ממש הזכיר לי מי אני ומה חשוב לי. תודה!"</p>
+                        <cite class="testimonial__author">מיכל כ., ירושלים</cite>
                     </div>
 
+                    <div class="testimonial-card glass-card animate-in">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"אבינעם הצליח לתת לי כלים פשוטים שממש עובדים. אני מרגישה הרבה יותר שקטה ובשליטה על החיים שלי."</p>
+                        <cite class="testimonial__author">רונית ש., חיפה</cite>
+                    </div>
                 </div>
             </div>
         </section>
@@ -477,38 +623,38 @@
         <!-- FAQ Section -->
         <section id="faq" class="section faq">
             <div class="container">
-                <h2 class="section__title">שאלות נפוצות</h2>
+                <h2 class="section__title animate-in">שאלות נפוצות</h2>
 
                 <div class="faq__list">
-                    <details class="faq-item reveal" data-faq-id="duration">
+                    <details class="faq-item glass-card animate-in" data-faq-id="duration">
                         <summary class="faq-item__question">כמה זמן מפגש ומה כולל?</summary>
                         <div class="faq-item__answer">
                             <p>מפגש נמשך 50 דקות ומתמקד בזיהוי מה עוצר אותך, הסיפורים שאתה מספר לעצמך, ואיך לצאת מתקיעות לתנועה אמיתית. כולל ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך.</p>
                         </div>
                     </details>
 
-                    <details class="faq-item reveal" data-faq-id="support">
+                    <details class="faq-item glass-card animate-in" data-faq-id="support">
                         <summary class="faq-item__question">האם יש ליווי בין מפגשים?</summary>
                         <div class="faq-item__answer">
                             <p>כן, מקבלים ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך כחלק מהשירות.</p>
                         </div>
                     </details>
 
-                    <details class="faq-item reveal" data-faq-id="timeline">
+                    <details class="faq-item glass-card animate-in" data-faq-id="timeline">
                         <summary class="faq-item__question">תוך כמה זמן מרגישים שינוי?</summary>
                         <div class="faq-item__answer">
                             <p>השינוי מתחיל להיות מורגש כבר מהמפגש הראשון. התהליך הוא אישי ומותאם לכל אדם, ורבים מדווחים על תחושת בהירות ושחרור מיידיים.</p>
                         </div>
                     </details>
 
-                    <details class="faq-item reveal" data-faq-id="cancel">
+                    <details class="faq-item glass-card animate-in" data-faq-id="cancel">
                         <summary class="faq-item__question">איך מבטלים או דוחים פגישה?</summary>
                         <div class="faq-item__answer">
                             <p>ניתן לבטל או לדחות פגישה בהודעה בוואטסאפ או בשיחה טלפונית מראש. מומלץ להודיע לפחות 24 שעות מראש.</p>
                         </div>
                     </details>
 
-                    <details class="faq-item reveal" data-faq-id="tried-everything">
+                    <details class="faq-item glass-card animate-in" data-faq-id="tried-everything">
                         <summary class="faq-item__question">האם מתאים גם אם "ניסיתי הכול"?</summary>
                         <div class="faq-item__answer">
                             <p>בהחלט. השילוב בין כלים מדעיים, פסיכולוגיים ורוחניים מאפשר גישה שונה ומותאמת אישית שיכולה לעבוד גם אם דרכים אחרות לא הצליחו. לפעמים כל מה שצריך זה זווית אחרת ואדם שיזכיר לך מי אתה באמת.</p>
@@ -521,9 +667,9 @@
         <!-- Contact Form Section -->
         <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section__title">דברו איתי</h2>
+                <h2 class="section__title animate-in">דברו איתי</h2>
 
-                <form id="contact-form" class="contact-form" novalidate>
+                <form id="contact-form" class="contact-form glass-card animate-in" novalidate>
                     <!-- Honeypot for spam protection -->
                     <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -582,7 +728,7 @@
                         <span id="consent-error" class="form-error" role="alert"></span>
                     </div>
 
-                    <button type="submit" class="btn btn--primary btn--lg btn--block" id="submit-btn">
+                    <button type="submit" class="btn btn--primary btn--block" id="submit-btn">
                         <span class="btn__text">שליחה</span>
                         <span class="btn__loading" aria-hidden="true">
                             <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -595,7 +741,7 @@
                     <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
                 </form>
 
-                <div id="form-success" class="form-success" role="alert" aria-live="assertive" hidden>
+                <div id="form-success" class="form-success glass-card" role="alert" aria-live="assertive" hidden>
                     <div class="success-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -621,38 +767,34 @@
         <div class="container">
             <div class="footer__top">
                 <div class="footer__logo">
-                    <img src="images/logo.png" data-src="/images/logo.svg" alt="לוגו אבינעם הטל" width="100" height="33">
+                    <img src="/images/logo.png" alt="לוגו אבינעם הטל" width="100" height="33">
                 </div>
 
                 <div class="footer__contact">
-                    <h3 class="footer__heading" style="font-size: 1rem; margin-bottom: 0.5rem; color: #ffffff;">צור קשר</h3>
-                    <p style="margin: 0.25rem 0;">
+                    <h3 class="footer__heading">צור קשר</h3>
+                    <p>
                         <a href="tel:+972556669912" class="footer__link" aria-label="התקשר לאבינעם">📞 055-666-9912</a>
                     </p>
-                    <p style="margin: 0.25rem 0;">
+                    <p>
                         <a href="mailto:Avinoamhattal18@gmail.com" class="footer__link">✉️ Avinoamhattal18@gmail.com</a>
                     </p>
-                    <p style="margin: 0.5rem 0; font-size: 0.875rem;">📍 פגישות אונליין ופרונטליות</p>
+                    <p class="footer__location">📍 פגישות אונליין ופרונטליות</p>
                 </div>
 
-                <div class="footer__social" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <div class="footer__social">
                     <a href="https://www.facebook.com/bynmhtl?locale=he_IL"
                        target="_blank"
                        rel="noopener"
                        aria-label="עקבו אחרי בפייסבוק"
-                       class="footer__link"
-                       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--brown-2); color: white; transition: transform 0.2s;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
+                       class="social-link">
+                        <span class="social-icon">f</span>
                     </a>
                     <a href="https://www.instagram.com/avinoamhattal/"
                        target="_blank"
                        rel="noopener"
                        aria-label="עקבו אחרי באינסטגרם"
-                       class="footer__link"
-                       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--brown-2); color: white; transition: transform 0.2s;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                       class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
@@ -661,8 +803,8 @@
 
             <div class="footer__legal">
                 <nav aria-label="קישורים משפטיים">
-                    <a href="#privacy" class="footer__link">הצהרת פרטיות</a>
-                    <a href="#accessibility" class="footer__link">הצהרת נגישות</a>
+                    <button type="button" class="footer__link footer__link--btn" data-toggle="privacy">הצהרת פרטיות</button>
+                    <button type="button" class="footer__link footer__link--btn" data-toggle="accessibility">הצהרת נגישות</button>
                 </nav>
             </div>
 
@@ -671,7 +813,7 @@
             </div>
 
             <div class="footer__credit">
-                <p>נבנה באהבה על ידי <span class="footer__credit-name">Ronco</span></p>
+                <p>נבנה באהבה ❤️ על ידי <span class="footer__credit-name">Ronco</span></p>
             </div>
         </div>
     </footer>
