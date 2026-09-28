@@ -1599,90 +1599,66 @@ html:not(.js-motion) .story__block--after { order: 3; }
   color: var(--glow);
 }
 
-.marquee {
-  position: relative;
-  overflow: hidden;
-  direction: ltr;
-  -webkit-mask-image: linear-gradient(to left, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(to left, transparent, #000 10%, #000 90%, transparent);
-}
-
-.marquee__track {
-  display: flex;
-  gap: 1.25rem;
-  width: max-content;
-  padding-block: 0.5rem;
-  direction: ltr;
-}
-
-.marquee__group {
-  display: flex;
+/* WhatsApp screenshots: three explicit columns on desktop (grouped in the
+   markup so heights balance in every browser), a swipe row below that. */
+.wa-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 1.25rem;
 }
 
-/* Static fallback: wrap cards when there's no motion */
-.marquee:not(.is-running) {
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-
-.marquee:not(.is-running) .marquee__track {
-  width: auto;
-  justify-content: center;
-  padding-inline: 1.25rem;
-}
-
-.marquee:not(.is-running) .marquee__group {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.marquee.is-running .marquee__track {
-  animation: marquee var(--marquee-duration, 45s) linear infinite;
-}
-
-.marquee.is-running:hover .marquee__track,
-.marquee.is-running:focus-within .marquee__track {
-  animation-play-state: paused;
-}
-
-/* Content flows rightward, matching RTL reading */
-@keyframes marquee {
-  from { transform: translateX(calc(-1 * var(--marquee-shift, 50%))); }
-  to { transform: translateX(0); }
-}
-
-.testimonial-card {
+.wa-col {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  width: min(400px, 82vw);
-  padding: 2rem;
-  direction: rtl;
+}
+
+.wa-shot {
+  margin: 0;
+  padding: 0.5rem;
   background: rgba(245, 237, 226, 0.05);
   border: 1px solid rgba(245, 237, 226, 0.12);
   border-radius: var(--radius-lg);
 }
 
-.testimonial__stars {
-  font-size: 1rem;
-  letter-spacing: 3px;
-  color: var(--glow);
+.wa-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-lg) - 0.5rem);
 }
 
-.testimonial__text {
-  flex: 1;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgba(245, 237, 226, 0.9);
+@media (max-width: 1100px) {
+  .wa-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-inline: calc(-1 * var(--spacing-lg));
+    padding: 0 var(--spacing-lg) 0.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--spacing-lg);
+    scrollbar-width: none;
+  }
+
+  .wa-gallery::-webkit-scrollbar { display: none; }
+
+  .wa-col { display: contents; }
+
+  .wa-shot {
+    flex: 0 0 min(82vw, 380px);
+    scroll-snap-align: center;
+  }
 }
 
-.testimonial__author {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--brown-2);
+@media (max-width: 768px) {
+  .wa-gallery {
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+  }
 }
 
 /* ===================================

@@ -329,57 +329,6 @@
   }
 
   // ===================================
-  // TESTIMONIALS MARQUEE
-  // ===================================
-
-  function buildMarquee() {
-    const marquee = $('.marquee');
-    const track = $('.marquee__track', marquee || document);
-    const group = $('.marquee__group', track || document);
-    if (!marquee || !track || !group) return;
-
-    const setup = () => {
-      $$('.marquee__group[data-clone]', track).forEach(clone => clone.remove());
-
-      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      const groupWidth = group.getBoundingClientRect().width + gap;
-      if (!groupWidth) return;
-
-      const copies = Math.ceil(window.innerWidth / groupWidth) + 1;
-      for (let i = 0; i < copies; i++) {
-        const clone = group.cloneNode(true);
-        clone.dataset.clone = '';
-        clone.setAttribute('aria-hidden', 'true');
-        clone.setAttribute('inert', '');
-        track.appendChild(clone);
-      }
-
-      marquee.style.setProperty('--marquee-shift', groupWidth + 'px');
-      marquee.style.setProperty('--marquee-duration', Math.round(groupWidth / 55) + 's');
-      marquee.classList.add('is-running');
-    };
-
-    setup();
-
-    let lastWidth = window.innerWidth;
-    let timer;
-    window.addEventListener('resize', () => {
-      if (window.innerWidth === lastWidth) return;
-      lastWidth = window.innerWidth;
-      clearTimeout(timer);
-      timer = setTimeout(setup, 200);
-    });
-
-    // Pause when off-screen
-    ScrollTrigger.create({
-      trigger: marquee,
-      start: 'top bottom',
-      end: 'bottom top',
-      onToggle: self => { track.style.animationPlayState = self.isActive ? '' : 'paused'; }
-    });
-  }
-
-  // ===================================
   // CONTACT + FOOTER
   // ===================================
 
@@ -495,7 +444,6 @@
     buildResults();
     buildAbout();
     buildCerts();
-    buildMarquee();
     buildContact();
     buildGlobal();
     initRefreshHooks();
