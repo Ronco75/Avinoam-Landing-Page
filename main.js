@@ -6,43 +6,13 @@
 (function() {
   'use strict';
 
-  // ===================================
-  // INTERSECTION OBSERVER FOR ANIMATIONS
-  // ===================================
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /**
-   * Initialize scroll animations using IntersectionObserver
-   * Elements with .animate-in class will fade in and slide up when they enter viewport
+   * Tell motion.js the page height changed (FAQ, legal sections, etc.)
    */
-  function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.animate-in');
-
-    if (!animatedElements.length) return;
-
-    // Configuration for the observer
-    const observerOptions = {
-      root: null, // viewport
-      rootMargin: '0px 0px -100px 0px', // Trigger slightly before element enters viewport
-      threshold: 0.1 // Trigger when 10% of element is visible
-    };
-
-    // Create the observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Add visible class to trigger animation
-          entry.target.classList.add('visible');
-
-          // Optional: Stop observing after animation (performance optimization)
-          // observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe all animated elements
-    animatedElements.forEach(element => {
-      observer.observe(element);
-    });
+  function notifyLayoutChange() {
+    window.dispatchEvent(new CustomEvent('layoutchange'));
   }
 
   // ===================================
@@ -214,7 +184,7 @@
   function initCookieBanner() {
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('cookie-accept');
-    const preferencesBtn = document.getElementById('cookie-preferences');
+    const preferencesBtn = document.getElementById('cookie-preferences-btn');
 
     if (!banner) return;
 
@@ -245,6 +215,8 @@
         const modal = document.getElementById('cookie-preferences');
         if (modal) {
           modal.hidden = false;
+          trapFocusInModal(modal);
+          modal.querySelector('button')?.focus();
         }
       });
     }
@@ -288,24 +260,155 @@
         if (href === '#') return;
 
         const target = document.querySelector(href);
+        if (!target) return;
 
-        if (target) {
-          e.preventDefault();
+        e.preventDefault();
+        closeMenu();
 
-          // Calculate offset for fixed header
-          const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-          const targetPosition = target.offsetTop - headerHeight;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Update URL without jumping
-          history.pushState(null, null, href);
+        // Legal sections start hidden
+        if (target.hasAttribute('hidden') && target.classList.contains('legal-section')) {
+          target.removeAttribute('hidden');
+          notifyLayoutChange();
         }
+
+        scrollToTarget(target);
+
+        // Update URL without jumping
+        history.pushState(null, '', href);
       });
     });
+  }
+
+  /**
+   * Scroll to an element below the fixed header, via Lenis when it's running
+   */
+  function scrollToTarget(target) {
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 76;
+
+    if (window.lenis) {
+      window.lenis.scrollTo(target, { offset: -headerHeight + 1, duration: 1.4 });
+      return;
+    }
+
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight + 1;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  }
+
+  // ===================================
+  // MOBILE MENU
+  // ===================================
+
+  function closeMenu() {
+    const header = document.querySelector('.header');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!header || !header.classList.contains('menu-open')) return;
+    header.classList.remove('menu-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'פתיחת תפריט');
+    window.lenis?.start();
+  }
+
+  function initMobileMenu() {
+    const header = document.querySelector('.header');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!header || !toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'סגירת תפריט' : 'פתיחת תפריט');
+      if (isOpen) {
+        header.classList.remove('is-hidden');
+        window.lenis?.stop();
+      } else {
+        window.lenis?.start();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  // ===================================
+  // ACTIVE NAV LINK
+  // ===================================
+
+  function initActiveNav() {
+    const links = [...document.querySelectorAll('.nav-link')];
+    const sections = links
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        links.forEach(link => {
+          link.classList.toggle('is-active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  // ===================================
+  // FAQ: SMOOTH OPEN / CLOSE
+  // ===================================
+
+  function initFaq() {
+    document.querySelectorAll('.faq-item').forEach(details => {
+      const summary = details.querySelector('summary');
+      const answer = details.querySelector('.faq-item__answer');
+      if (!summary || !answer) return;
+
+      let animation = null;
+
+      summary.addEventListener('click', (e) => {
+        if (prefersReducedMotion || !answer.animate) {
+          // Native toggle; just let listeners know the height changed
+          requestAnimationFrame(notifyLayoutChange);
+          return;
+        }
+
+        e.preventDefault();
+        animation?.cancel();
+
+        const opening = !details.open;
+        const startHeight = opening ? 0 : answer.offsetHeight;
+        if (opening) details.open = true;
+        const endHeight = opening ? answer.offsetHeight : 0;
+
+        animation = answer.animate(
+          [
+            { height: startHeight + 'px', opacity: opening ? 0 : 1 },
+            { height: endHeight + 'px', opacity: opening ? 1 : 0 }
+          ],
+          { duration: opening ? 450 : 300, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' }
+        );
+
+        animation.onfinish = () => {
+          if (!opening) details.open = false;
+          animation = null;
+          notifyLayoutChange();
+        };
+      });
+    });
+  }
+
+  // ===================================
+  // FLOATING WHATSAPP NUDGE
+  // ===================================
+
+  function initWhatsappNudge() {
+    const button = document.querySelector('.floating-whatsapp');
+    if (!button || prefersReducedMotion) return;
+    setTimeout(() => button.classList.add('nudge'), 20000);
   }
 
   // ===================================
@@ -330,6 +433,9 @@
    * Trap focus in modal
    */
   function trapFocusInModal(modal) {
+    if (modal.dataset.trapped) return;
+    modal.dataset.trapped = 'true';
+
     const focusableElements = modal.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
@@ -361,11 +467,10 @@
    * Initialize modal accessibility
    */
   function initModalAccessibility() {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if (!modal.hidden) {
-        trapFocusInModal(modal);
-      }
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.querySelector('.modal__overlay')?.addEventListener('click', () => {
+        modal.hidden = true;
+      });
     });
   }
 
@@ -406,20 +511,12 @@
     const header = document.querySelector('.header');
     if (!header) return;
 
-    let lastScroll = 0;
+    const update = () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    };
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-
-      // Add scrolled class when past top
-      if (currentScroll > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-
-      lastScroll = currentScroll;
-    });
+    update();
+    window.addEventListener('scroll', update, { passive: true });
   }
 
   // ===================================
@@ -466,12 +563,11 @@
 
           if (isHidden) {
             section.removeAttribute('hidden');
-            // Scroll to section
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            notifyLayoutChange();
+            scrollToTarget(section);
           } else {
             section.setAttribute('hidden', '');
-            // Scroll back to footer
-            button.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            notifyLayoutChange();
           }
         }
       });
@@ -484,9 +580,6 @@
   function init() {
     // Set current year
     setCurrentYear();
-
-    // Initialize scroll animations
-    initScrollAnimations();
 
     // Initialize form
     initContactForm();
@@ -508,6 +601,12 @@
 
     // Initialize legal section toggles
     initLegalToggles();
+
+    // Navigation & interactions
+    initMobileMenu();
+    initActiveNav();
+    initFaq();
+    initWhatsappNudge();
 
     console.log('✨ Avinoam Hattal - Mental Coaching - Initialized');
   }
