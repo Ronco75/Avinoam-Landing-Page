@@ -131,9 +131,22 @@
       };
 
       try {
-        // Here you would normally send to your backend
-        // For now, simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const response = await fetch('https://formsubmit.co/ajax/avinoamhattal18@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'ליד חדש מהאתר - ' + data.name,
+            _template: 'table',
+            _captcha: 'false',
+            'שם': data.name,
+            'טלפון': data.phone,
+            'אימייל': data.email || 'לא צוין'
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === 'false' || result.success === false) {
+          throw new Error(result.message || 'Form submission failed');
+        }
 
         // Success - hide form, show success message
         form.hidden = true;
