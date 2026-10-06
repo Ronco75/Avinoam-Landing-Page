@@ -317,15 +317,58 @@
   }
 
   function buildCerts() {
-    const grid = $('.certs__grid');
-    if (!grid) return;
+    const bento = $('.certs__bento');
+    if (!bento) return;
 
-    const cards = $$('.cert-card', grid);
-    const shapes = prepareDraw($$('.cert-card__mark > *', grid));
+    const feature = $('.cert-feature', bento);
+    const more = $('.certs__more', bento);
+    // Side by side (desktop) both columns share one trigger and FTC leads;
+    // stacked (tablet/phone) the lower list waits until it reaches the viewport.
+    const sideBySide = window.matchMedia('(min-width: 961px)').matches;
 
-    const tl = gsap.timeline({ scrollTrigger: { trigger: grid, start: 'top 82%' } });
-    tl.from(cards, { opacity: 0, y: 60, duration: 1.2, stagger: 0.1, ease: 'expo.out' })
-      .to(shapes, { strokeDashoffset: 0, duration: 1.6, stagger: 0.06, ease: 'power2.inOut' }, 0.2);
+    if (feature) {
+      const lines = prepareDraw($$('.cert-feature__mark [data-draw]', feature));
+
+      const tl = gsap.timeline({
+        defaults: { ease: 'expo.out' },
+        scrollTrigger: { trigger: feature, start: 'top 82%' }
+      });
+
+      tl.from(feature, { opacity: 0, y: 70, duration: 1.3, clearProps: 'all' })
+        .from($('.cert-feature__label', feature), { opacity: 0, y: 14, duration: 0.9 }, 0.25)
+        .from($('.cert-feature__word', feature), { yPercent: 110, duration: 1.3 }, 0.3)
+        .from($('.cert-feature__rule', feature), { scaleX: 0, transformOrigin: '100% 50%', duration: 1.1, ease: 'power3.inOut' }, 0.6)
+        .from($('.cert-feature__subtitle', feature), { opacity: 0, y: 18, duration: 1.1 }, 0.75)
+        .to(lines, { strokeDashoffset: 0, duration: 1.8, stagger: 0.14, ease: 'power2.inOut' }, 0.35)
+        .from($('.cert-feature__heart', feature), { fillOpacity: 0, duration: 1.2, ease: 'power1.out' }, 1.2)
+        .from($('.cert-feature__orbit', feature), { opacity: 0, duration: 1.6, ease: 'power1.out' }, 0.9)
+        .from($$('.cert-feature__halo, .cert-feature__core', feature), {
+          opacity: 0,
+          scale: 0.5,
+          transformOrigin: '50% 50%',
+          duration: 0.9,
+          stagger: 0.08,
+          ease: 'back.out(2)'
+        }, 1.5);
+    }
+
+    if (more) {
+      const title = $('.certs__more-title', more);
+      const tiles = $$('.cert-card', more);
+      const marks = prepareDraw($$('.cert-card__mark > *', more));
+      const at = sideBySide ? 0.35 : 0;
+
+      const tl = gsap.timeline({
+        defaults: { ease: 'expo.out' },
+        scrollTrigger: { trigger: sideBySide ? bento : more, start: sideBySide ? 'top 82%' : 'top 85%' }
+      });
+
+      // clearProps hands the tiles back to CSS so the hover lift (translate) is not pinned by inline styles
+      tl.from(title, { opacity: 0, y: 20, duration: 1 }, at)
+        .from(title, { '--certs-rule': 0, duration: 1.3, ease: 'power3.inOut' }, at + 0.1)
+        .from(tiles, { opacity: 0, y: 36, duration: 1.1, stagger: 0.09, clearProps: 'all' }, at + 0.15)
+        .to(marks, { strokeDashoffset: 0, duration: 1.4, stagger: 0.06, ease: 'power2.inOut' }, at + 0.3);
+    }
   }
 
   // ===================================

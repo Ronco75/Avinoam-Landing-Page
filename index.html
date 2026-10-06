@@ -100,7 +100,7 @@
             "@type": "Offer",
             "price": "250",
             "priceCurrency": "ILS",
-            "description": "פגישת אימון מנטלי 50 דקות עם ליווי בוואטסאפ"
+            "description": "פגישת אימון מנטלי 60 דקות עם ליווי בוואטסאפ"
           }
         },
         {
@@ -143,7 +143,7 @@
               "name": "כמה זמן מפגש ומה כולל?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "מפגש נמשך 50 דקות ומתמקד בזיהוי מה עוצר אותך, הסיפורים שאתה מספר לעצמך, ואיך לצאת מתקיעות לתנועה אמיתית. כולל ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך."
+                "text": "מפגש נמשך 60 דקות ומתמקד בזיהוי מה עוצר אותך, הסיפורים שאתה מספר לעצמך, ואיך לצאת מתקיעות לתנועה אמיתית. כולל ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך."
               }
             },
             {
@@ -459,15 +459,14 @@
             <div class="container about__container">
                 <div class="about__image">
                     <div class="about__frame" data-clip>
-                        <picture>
-                            <source type="image/webp" srcset="/images/avinoam-about.webp">
-                            <img src="/images/avinoam-about.jpg"
-                                 alt="אבינעם הטל - מאמן מנטלי"
-                                 width="500"
-                                 height="585"
-                                 loading="lazy"
-                                 class="about__portrait">
-                        </picture>
+                        <video class="about__portrait"
+                               src="/images/avinoam-video.mp4"
+                               poster="/images/avinoam-about.jpg"
+                               width="464"
+                               height="832"
+                               autoplay muted loop playsinline
+                               preload="metadata"
+                               aria-label="אבינעם הטל - מאמן מנטלי"></video>
                     </div>
                     <span class="about__caption" data-reveal>אבינעם הטל · מאמן מנטלי</span>
                 </div>
@@ -495,30 +494,56 @@
                     <h2 class="section__title" data-split>ההכשרות שלי</h2>
                 </header>
 
-                <div class="certs__grid">
-                    <div class="cert-card card" data-card>
-                        <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
-                            <circle cx="50" cy="50" r="34"/><path d="M28,50 Q39,30 50,50 T72,50"/>
+                <div class="certs__bento">
+                    <div class="cert-feature card">
+                        <div class="cert-feature__glow" aria-hidden="true"></div>
+                        <svg class="cert-feature__mark" viewBox="0 0 240 240" aria-hidden="true">
+                            <circle class="cert-feature__orbit" cx="120" cy="120" r="112" stroke-dasharray="0.5 9"/>
+                            <circle data-draw cx="120" cy="120" r="88"/>
+                            <rect data-draw x="62" y="62" width="116" height="116" rx="14" transform="rotate(45 120 120)"/>
+                            <circle data-draw class="cert-feature__heart" cx="120" cy="120" r="34"/>
+                            <circle class="cert-feature__halo" cx="120" cy="120" r="13"/>
+                            <circle class="cert-feature__core" cx="120" cy="120" r="5"/>
                         </svg>
-                        <h3 class="cert-card__title">NLP Practitioner</h3>
+
+                        <span class="cert-feature__label"><span class="cert-feature__dot" aria-hidden="true"></span>ההכשרה המרכזית</span>
+
+                        <div class="cert-feature__body">
+                            <h3 class="cert-feature__title"><span class="cert-feature__word" lang="en" dir="ltr">FTC</span></h3>
+                            <span class="cert-feature__rule" aria-hidden="true"></span>
+                            <p class="cert-feature__subtitle">אימון מנטלי עם כלים מעולם התניא</p>
+                        </div>
                     </div>
-                    <div class="cert-card card" data-card>
-                        <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
-                            <polygon points="50,18 82,70 18,70"/><circle cx="50" cy="52" r="13"/>
-                        </svg>
-                        <h3 class="cert-card__title">NLP Master</h3>
-                    </div>
-                    <div class="cert-card card" data-card>
-                        <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
-                            <path d="M50,16 C26,16 26,84 50,84 C74,84 74,16 50,16Z"/><ellipse cx="50" cy="50" rx="10" ry="20"/>
-                        </svg>
-                        <h3 class="cert-card__title">ELT<span class="cert-card__subtitle">טיפול וליווי טראומות רגשיות</span></h3>
-                    </div>
-                    <div class="cert-card card" data-card>
-                        <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
-                            <rect x="28" y="28" width="44" height="44" rx="8" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="11"/>
-                        </svg>
-                        <h3 class="cert-card__title">FTC<span class="cert-card__subtitle">אימון מנטלי עם כלים מעולם התניא</span></h3>
+
+                    <div class="certs__more">
+                        <h3 class="certs__more-title">הכשרות נוספות</h3>
+                        <ul class="certs__list" role="list">
+                            <li class="cert-card">
+                                <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="34"/><path d="M28,50 Q39,30 50,50 T72,50"/>
+                                </svg>
+                                <div class="cert-card__text">
+                                    <h4 class="cert-card__title"><span lang="en" dir="ltr">NLP Practitioner</span></h4>
+                                </div>
+                            </li>
+                            <li class="cert-card">
+                                <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
+                                    <polygon points="50,18 82,70 18,70"/><circle cx="50" cy="52" r="13"/>
+                                </svg>
+                                <div class="cert-card__text">
+                                    <h4 class="cert-card__title"><span lang="en" dir="ltr">NLP Master</span></h4>
+                                </div>
+                            </li>
+                            <li class="cert-card">
+                                <svg class="cert-card__mark" viewBox="0 0 100 100" aria-hidden="true">
+                                    <path d="M50,16 C26,16 26,84 50,84 C74,84 74,16 50,16Z"/><ellipse cx="50" cy="50" rx="10" ry="20"/>
+                                </svg>
+                                <div class="cert-card__text">
+                                    <h4 class="cert-card__title"><span lang="en" dir="ltr">ELT</span></h4>
+                                    <p class="cert-card__subtitle">טיפול וליווי טראומות רגשיות</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -581,7 +606,7 @@
                     <details class="faq-item" data-faq-id="duration" data-row>
                         <summary class="faq-item__question">כמה זמן מפגש ומה כולל?<span class="faq-item__icon" aria-hidden="true"></span></summary>
                         <div class="faq-item__answer">
-                            <p>מפגש נמשך 50 דקות ומתמקד בזיהוי מה עוצר אותך, הסיפורים שאתה מספר לעצמך, ואיך לצאת מתקיעות לתנועה אמיתית. כולל ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך.</p>
+                            <p>מפגש נמשך 60 דקות ומתמקד בזיהוי מה עוצר אותך, הסיפורים שאתה מספר לעצמך, ואיך לצאת מתקיעות לתנועה אמיתית. כולל ליווי אישי בוואטסאפ ושיחת טלפון בעת צורך.</p>
                         </div>
                     </details>
 
