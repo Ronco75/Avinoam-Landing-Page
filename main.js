@@ -135,7 +135,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-            _subject: 'ליד חדש מהאתר - ' + data.name,
+            _subject: 'ליד חדש מהאתר',
             _template: 'table',
             _captcha: 'false',
             'שם': data.name,
