@@ -188,74 +188,6 @@
   }
 
   // ===================================
-  // COOKIE BANNER
-  // ===================================
-
-  /**
-   * Handle cookie banner
-   */
-  function initCookieBanner() {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const preferencesBtn = document.getElementById('cookie-preferences-btn');
-
-    if (!banner) return;
-
-    // Check if user has already accepted cookies
-    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-
-    if (!cookiesAccepted) {
-      // Show banner after short delay
-      setTimeout(() => {
-        banner.setAttribute('aria-hidden', 'false');
-      }, 2000);
-    }
-
-    // Accept cookies
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        banner.setAttribute('aria-hidden', 'true');
-
-        // Initialize analytics if needed
-        initAnalytics();
-      });
-    }
-
-    // Open preferences modal
-    if (preferencesBtn) {
-      preferencesBtn.addEventListener('click', () => {
-        const modal = document.getElementById('cookie-preferences');
-        if (modal) {
-          modal.hidden = false;
-          trapFocusInModal(modal);
-          modal.querySelector('button')?.focus();
-        }
-      });
-    }
-
-    // Close preferences modal
-    const closePreferencesBtn = document.getElementById('close-preferences');
-    if (closePreferencesBtn) {
-      closePreferencesBtn.addEventListener('click', () => {
-        const modal = document.getElementById('cookie-preferences');
-        if (modal) {
-          modal.hidden = true;
-        }
-      });
-    }
-  }
-
-  /**
-   * Initialize analytics (placeholder)
-   */
-  function initAnalytics() {
-    // Initialize Google Analytics or other tracking here
-    // This would be called after user accepts cookies
-    console.log('Analytics initialized');
-  }
-
-  // ===================================
   // SMOOTH SCROLL FOR NAVIGATION
   // ===================================
 
@@ -596,9 +528,6 @@
 
     // Initialize form
     initContactForm();
-
-    // Initialize cookie banner
-    initCookieBanner();
 
     // Initialize smooth scroll
     initSmoothScroll();

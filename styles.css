@@ -2409,77 +2409,9 @@ html:not(.js-motion) .story__block--after { order: 3; }
 }
 
 .legal-content { max-width: 800px; }
-
-/* ===================================
-   COOKIE BANNER
-   =================================== */
-.cookie-banner {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 70;
-  max-width: 420px;
-  padding: 1.25rem 1.5rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(calc(100% + 2rem));
-  transition: transform 600ms var(--ease-out);
-}
-
-.cookie-banner[aria-hidden="false"] { transform: translateY(0); }
-
-.cookie-banner p {
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-.cookie-banner__actions {
-  display: flex;
-  gap: 0.6rem;
-}
-
-@media (max-width: 640px) {
-  .cookie-banner { left: 1rem; max-width: none; }
-  .cookie-banner__actions .btn { flex: 1; }
-}
-
-/* ===================================
-   MODAL
-   =================================== */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 250;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.modal[hidden] { display: none; }
-
-.modal__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 15, 11, 0.6);
-  backdrop-filter: blur(6px);
-}
-
-.modal__content {
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  padding: 2.5rem;
-  background: var(--card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-  animation: pop-in 400ms var(--ease-out) both;
-}
-
-.modal__content h2 { margin-bottom: 1rem; font-size: 1.8rem; }
+.legal-content h3 { margin: 1.5rem 0 0.5rem; font-size: 1.2rem; }
+.legal-content ul { margin: 0 0 1rem; padding-inline-start: 1.25rem; list-style: disc; }
+.legal-content li { margin-bottom: 0.35rem; }
 
 /* ===================================
    RESPONSIVE
@@ -2504,8 +2436,6 @@ html:not(.js-motion) .story__block--after { order: 3; }
 @media print {
   .header,
   .floating-whatsapp,
-  .cookie-banner,
-  .modal,
   .grain,
   .preloader,
   .footer__mark {
